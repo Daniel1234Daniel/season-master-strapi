@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_shared_window_range_cards",
+  "info": {
+    "displayName": "WindowRangeCard"
+  },
+  "options": {},
+  "attributes": {
+    "header": {
+      "type": "string"
+    },
+    "textDescription": {
+      "type": "string"
+    },
+    "cover": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
+  "config": {}
+}

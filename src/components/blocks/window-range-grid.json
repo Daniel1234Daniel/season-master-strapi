@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_blocks_window_range_grids",
+  "info": {
+    "displayName": "WindowRangeGrid"
+  },
+  "options": {},
+  "attributes": {
+    "head": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "WindowRangeGrid": {
+      "type": "component",
+      "component": "shared.window-range-card",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

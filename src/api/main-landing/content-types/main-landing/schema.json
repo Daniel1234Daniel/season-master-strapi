@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "main_landings",
+  "info": {
+    "singularName": "main-landing",
+    "pluralName": "main-landings",
+    "displayName": "MainLanding"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "CardGirdFeatures": {
+      "type": "component",
+      "component": "blocks.feature-card-grid",
+      "repeatable": true
+    }
+  }
+}

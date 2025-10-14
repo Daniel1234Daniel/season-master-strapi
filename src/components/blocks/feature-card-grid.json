@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_blocks_feature_card_grids",
+  "info": {
+    "displayName": "Feature Card Grid"
+  },
+  "options": {},
+  "attributes": {
+    "FeatureCards": {
+      "type": "component",
+      "component": "shared.feature-highlights-card",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

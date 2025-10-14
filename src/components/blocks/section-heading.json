@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_blocks_section_headings",
+  "info": {
+    "displayName": "Section  Heading"
+  },
+  "options": {},
+  "attributes": {
+    "subHeading": {
+      "type": "string"
+    },
+    "heading": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "window_ranges",
+  "info": {
+    "singularName": "window-range",
+    "pluralName": "window-ranges",
+    "displayName": "WindowRange"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "WindowRangeGrid": {
+      "type": "component",
+      "component": "blocks.window-range-grid",
+      "repeatable": false
+    }
+  }
+}
