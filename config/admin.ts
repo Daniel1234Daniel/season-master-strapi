@@ -19,10 +19,10 @@ module.exports = ({ env }) => ({
   },
   sessions: {
     settings: {
-      httpOnly: true,         
-      secure: env.bool('COOKIE_SECURE', true),
-      maxAge: 1000 * 60 * 60 * 24, 
-      sameSite: 'Strict',     
+      httpOnly: true,
+      secure: true,        // only HTTPS
+      sameSite: 'Strict',  // better CSRF protection
+      maxAge: 1000 * 60 * 60 * 24, // 1 day
     },
   },
 });
