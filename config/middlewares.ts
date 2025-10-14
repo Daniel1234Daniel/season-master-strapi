@@ -31,9 +31,6 @@ export default [
   'strapi::poweredBy',
   'strapi::query',
   'strapi::body',
-  {
-    name: 'global::log-request',
-  },
    {
     name: 'strapi::session',
     config: {
