@@ -35,12 +35,7 @@ export default [
   'strapi::favicon',
   'strapi::public',
 
- 
-  async (ctx, next) => {
-
-    if (ctx.headers['x-forwarded-proto'] === 'https') {
-      ctx.request.secure = true;
-    }
-    await next();
+  {
+    name: 'global::https-proxy',
   },
 ];
