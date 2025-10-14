@@ -1,10 +1,4 @@
 export default [
-    async (ctx, next) => {
-    console.log('Request protocol:', ctx.request.protocol);
-    console.log('X-Forwarded-Proto:', ctx.request.header['x-forwarded-proto']);
-    console.log('COOKIE_SECURE:', process.env.COOKIE_SECURE);
-    await next();
-  },
   'strapi::logger',
   'strapi::errors',
  {
@@ -37,6 +31,9 @@ export default [
   'strapi::poweredBy',
   'strapi::query',
   'strapi::body',
+  {
+    name: 'global::log-request',
+  },
    {
     name: 'strapi::session',
     config: {
