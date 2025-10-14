@@ -1,7 +1,7 @@
 export default [
   'strapi::logger',
   'strapi::errors',
- {
+  {
     name: "strapi::security",
     config: {
       contentSecurityPolicy: {
@@ -34,4 +34,13 @@ export default [
   'strapi::session',
   'strapi::favicon',
   'strapi::public',
+
+ 
+  async (ctx, next) => {
+
+    if (ctx.headers['x-forwarded-proto'] === 'https') {
+      ctx.request.secure = true;
+    }
+    await next();
+  },
 ];
