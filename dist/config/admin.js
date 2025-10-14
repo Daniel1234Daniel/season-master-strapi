@@ -1,6 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = ({ env }) => ({
+module.exports = ({ env }) => ({
     auth: {
         secret: env('ADMIN_JWT_SECRET'),
     },
@@ -18,5 +16,13 @@ exports.default = ({ env }) => ({
     flags: {
         nps: env.bool('FLAG_NPS', true),
         promoteEE: env.bool('FLAG_PROMOTE_EE', true),
+    },
+    sessions: {
+        settings: {
+            httpOnly: true,
+            secure: false,
+            maxAge: 86400000,
+            sameSite: 'Lax',
+        },
     },
 });

@@ -1,7 +1,7 @@
 export default [
   'strapi::logger',
   'strapi::errors',
-  {
+ {
     name: "strapi::security",
     config: {
       contentSecurityPolicy: {
@@ -34,8 +34,4 @@ export default [
   'strapi::session',
   'strapi::favicon',
   'strapi::public',
-
-  {
-    name: 'global::https-proxy',
-  },
 ];

@@ -1,4 +1,4 @@
-export default ({ env }) => ({
+module.exports = ({ env }) => ({
   auth: {
     secret: env('ADMIN_JWT_SECRET'),
   },
@@ -16,5 +16,13 @@ export default ({ env }) => ({
   flags: {
     nps: env.bool('FLAG_NPS', true),
     promoteEE: env.bool('FLAG_PROMOTE_EE', true),
+  },
+  sessions: {
+    settings: {
+      httpOnly: true,         
+      secure: env.bool('COOKIE_SECURE', true),
+      maxAge: 1000 * 60 * 60 * 24, 
+      sameSite: 'Strict',     
+    },
   },
 });
