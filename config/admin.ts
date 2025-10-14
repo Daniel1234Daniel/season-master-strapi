@@ -17,12 +17,7 @@ module.exports = ({ env }) => ({
     nps: env.bool('FLAG_NPS', true),
     promoteEE: env.bool('FLAG_PROMOTE_EE', true),
   },
-  sessions: {
-    settings: {
-      httpOnly: true,
-      secure: true,        // only HTTPS
-      sameSite: 'Strict',  // better CSRF protection
-      maxAge: 1000 * 60 * 60 * 24, // 1 day
-    },
-  },
+
+  url: '/admin',
+  autoOpen: false,
 });
