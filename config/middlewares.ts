@@ -1,7 +1,7 @@
 export default [
   'strapi::logger',
   'strapi::errors',
- {
+  {
     name: "strapi::security",
     config: {
       contentSecurityPolicy: {
@@ -31,7 +31,7 @@ export default [
   'strapi::poweredBy',
   'strapi::query',
   'strapi::body',
-   {
+  {
     name: 'strapi::session',
     config: {
       cookie: {
