@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_blocks_why_choose_grids",
+  "info": {
+    "displayName": "WhyChooseGrid"
+  },
+  "options": {},
+  "attributes": {
+    "whyChoose": {
+      "type": "component",
+      "component": "shared.why-choose-card",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

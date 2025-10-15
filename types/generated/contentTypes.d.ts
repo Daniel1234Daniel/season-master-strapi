@@ -430,6 +430,43 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiAreaWeServiceAreaWeService extends Struct.SingleTypeSchema {
+  collectionName: 'area_we_services';
+  info: {
+    displayName: 'AreaWeService';
+    pluralName: 'area-we-services';
+    singularName: 'area-we-service';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    buttonText: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+    imageOfLocation: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    localDescription: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::area-we-service.area-we-service'
+    > &
+      Schema.Attribute.Private;
+    localTitle: Schema.Attribute.String;
+    nationWideDescription: Schema.Attribute.Text;
+    nationWideTitle: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiHeroSectionHeroSection extends Struct.SingleTypeSchema {
   collectionName: 'hero_sections';
   info: {
@@ -441,6 +478,8 @@ export interface ApiHeroSectionHeroSection extends Struct.SingleTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    becomeFabricator: Schema.Attribute.String;
+    buyContent: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -489,6 +528,105 @@ export interface ApiMainLandingMainLanding extends Struct.SingleTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+  };
+}
+
+export interface ApiShoppingShopping extends Struct.SingleTypeSchema {
+  collectionName: 'shoppings';
+  info: {
+    displayName: 'Shopping';
+    pluralName: 'shoppings';
+    singularName: 'shopping';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::shopping.shopping'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    ShoppingCardGrid: Schema.Attribute.Component<'shared.shopping-card', true>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiTrustedByTrustedBy extends Struct.SingleTypeSchema {
+  collectionName: 'trusted_bies';
+  info: {
+    displayName: 'TrustedBy';
+    pluralName: 'trusted-bies';
+    singularName: 'trusted-by';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    coverImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::trusted-by.trusted-by'
+    > &
+      Schema.Attribute.Private;
+    logoLists: Schema.Attribute.Component<'blocks.company-logs', true>;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiWhyChooseWhyChoose extends Struct.SingleTypeSchema {
+  collectionName: 'why_chooses';
+  info: {
+    displayName: 'WhyChoose';
+    pluralName: 'why-chooses';
+    singularName: 'why-choose';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    coverImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::why-choose.why-choose'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    whyChooseComponent: Schema.Attribute.Component<
+      'blocks.why-choose-grid',
+      false
+    >;
   };
 }
 
@@ -1033,8 +1171,12 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::area-we-service.area-we-service': ApiAreaWeServiceAreaWeService;
       'api::hero-section.hero-section': ApiHeroSectionHeroSection;
       'api::main-landing.main-landing': ApiMainLandingMainLanding;
+      'api::shopping.shopping': ApiShoppingShopping;
+      'api::trusted-by.trusted-by': ApiTrustedByTrustedBy;
+      'api::why-choose.why-choose': ApiWhyChooseWhyChoose;
       'api::window-range.window-range': ApiWindowRangeWindowRange;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

@@ -1,0 +1,26 @@
+{
+  "kind": "singleType",
+  "collectionName": "shoppings",
+  "info": {
+    "singularName": "shopping",
+    "pluralName": "shoppings",
+    "displayName": "Shopping"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "ShoppingCardGrid": {
+      "type": "component",
+      "component": "shared.shopping-card",
+      "repeatable": true
+    }
+  }
+}
