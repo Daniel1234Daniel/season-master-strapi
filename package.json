@@ -32,6 +32,8 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^6.0.1",
     "typescript": "^5"
   },
   "engines": {
@@ -44,6 +46,7 @@
   },
   "optionalDependencies": {
     "@rollup/rollup-linux-x64-musl": "^4.24.0",
-    "@swc/core": "1.7.26"
+    "@swc/core": "1.7.26",
+    "sharp": "^0.33.5"
   }
 }
