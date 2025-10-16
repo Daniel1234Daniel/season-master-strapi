@@ -4,20 +4,17 @@
   "private": true,
   "description": "A Strapi application",
   "scripts": {
-    "build": "npm-run-all clean rebuild:swc rebuild:rollup rebuild:sharp strapi-build",
-    "clean": "rimraf .cache build dist",
-    "rebuild:swc": "npm rebuild @swc/core --build-from-source --platform=linux --arch=x64 --libc=musl",
-    "rebuild:rollup": "npm rebuild @rollup/rollup-linux-x64-musl --build-from-source",
-    "rebuild:sharp": "npm rebuild sharp --build-from-source --platform=linux --arch=x64 --libc=musl",
-    "strapi-build": "strapi build --clean",
+    "build": "strapi build",
     "console": "strapi console",
     "deploy": "strapi deploy",
     "dev": "strapi develop",
     "develop": "strapi develop",
     "start": "strapi start",
     "strapi": "strapi",
+    "upgrade": "npx @strapi/upgrade latest",
+    "upgrade:dry": "npx @strapi/upgrade latest --dry",
     "prebuild": "node -v && npm -v",
-    "postinstall": "npm rebuild @swc/core @rollup/rollup-linux-x64-musl sharp --build-from-source --platform=linux --arch=x64 --libc=musl"
+    "postinstall": "npm rebuild @swc/core --update-binary || npm install @swc/core@latest --no-audit --no-fund"
   },
   "dependencies": {
     "@strapi/plugin-cloud": "5.27.0",
