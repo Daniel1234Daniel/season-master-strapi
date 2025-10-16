@@ -43,6 +43,7 @@
     "installId": "065319b16ecd5f33f6b97b40041b37fd90baeaefa519acfd0014e66ed1c6d598"
   },
   "optionalDependencies": {
+    "@rollup/rollup-linux-x64-musl": "^4.24.0",
     "@swc/core": "1.7.26"
   }
 }
